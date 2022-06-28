@@ -18,12 +18,35 @@ public class JpaMain {
 
         tx.begin();
         try {
-            Member member = new Member();
+            //dirty checking
+            Member member = entityManager.find(Member.class, 150L);
+            member.setName("7777");
+            System.out.println("=========================");
 
-            member.setId(2L);
+            //entityManager.persist(member);
 
-            member.setName("HelloA");
+//            //jpa 쓰기 지연
+//            Member member1 = new Member( 150L, "A");
+//            Member member2 = new Member( 160L, "B");
+//
+//            entityManager.persist(member1);
+//            entityManager.persist(member2);
+//            System.out.println("=========================");
+            /*Member findMember1 = entityManager.find(Member.class, 100L);
+            Member findMember2 = entityManager.find(Member.class, 100L);
 
+            System.out.println("result = " + (findMember2 == findMember1));*/
+            /*Member member = new Member();
+
+            member.setId(100L);
+
+            member.setName("HelloJPA");
+
+
+            System.out.println("=== BEFORE ===");
+            entityManager.persist(member);
+            System.out.println("====AFTER====");*/
+            /*
             List<Member> result = entityManager.createQuery("select m from Member as m", Member.class)
                     .setFirstResult(5)
                     .setMaxResults(8)
@@ -31,7 +54,7 @@ public class JpaMain {
 
             for (Member member1 : result) {
                 System.out.println("member1.getName() = " + member1.getName());
-            }
+            }*/
 
             /*Member findMember = entityManager.find(Member.class, 1L);
             findMember.setName("HelloJpa");*/
