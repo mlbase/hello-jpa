@@ -18,12 +18,14 @@ public class JpaMain {
 
         tx.begin();
         try {
-            Member member = new Member();
-            member.setUsername("c");
-            member.setRoleType(RoleType.user);
+            Member member1 = new Member();
+            member1.setUsername("C");
 
-            entityManager.persist(member);
+            System.out.println("===================");
 
+            entityManager.persist(member1);
+            System.out.println("member1.getId() = " + member1.getId());
+            System.out.println("===================");
             /*Member member = new Member();
             member.setId(3L);
             member.setUsername("c");
