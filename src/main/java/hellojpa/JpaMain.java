@@ -18,13 +18,20 @@ public class JpaMain {
 
         tx.begin();
         try {
+            /*Member member = new Member();
+            member.setId(3L);
+            member.setUsername("c");
+            member.setRoleType(RoleType.user);
+
+            entityManager.persist(member);*/
+
             //준영속(half persistence)
-            Member member = entityManager.find(Member.class, 150L);// db조회하는 순간 영속성 생성
-            member.setName("AAAA");
+            /*Member member = entityManager.find(Member.class, 150L);// db조회하는 순간 영속성 생성
+            member.setUsername("AAAA");
 
             //entityManager.detach(member);
             entityManager.clear();
-            Member member2 = entityManager.find(Member.class, 150L);// clear하는 순간 cache data도 초기화
+            Member member2 = entityManager.find(Member.class, 150L);*/// clear하는 순간 cache data도 초기화
             //flush entity 내용과 db를 동기화하는 개(entity manager를 비우지 않음!)
             /*Member member = new Member(200L, "meber 200");
             entityManager.persist(member);
