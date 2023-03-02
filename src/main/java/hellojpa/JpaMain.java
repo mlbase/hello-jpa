@@ -9,23 +9,36 @@ import java.util.List;
 
 public class JpaMain {
 
-    public static void main(String[] args) {
-        EntityManagerFactory emf= Persistence.createEntityManagerFactory("hello");
+//    public static void main(String[] args) {
+//        EntityManagerFactory emf= Persistence.createEntityManagerFactory("hello");
+//
+//        EntityManager entityManager = emf.createEntityManager();
+//
+//        EntityTransaction tx = entityManager.getTransaction();
+//
+//        tx.begin();
+//        try {
+//            Team team = new Team();
+//            team.setName("Liverpool");
+//
+//            Member member = new Member();
+//            member.setUsername("gerrad");
+//            member.setAge(30);
+//            member.setTeam(team);
+//
+//            entityManager.persist(team);
+//            entityManager.flush();
+//            Member findmember = entityManager.find(Member.class,member);
+//            Team findteam = entityManager.find(Team.class,member.getTeam());
 
-        EntityManager entityManager = emf.createEntityManager();
-
-        EntityTransaction tx = entityManager.getTransaction();
-
-        tx.begin();
-        try {
-            Member member1 = new Member();
+            /*Member member1 = new Member();
             member1.setUsername("C");
 
             System.out.println("===================");
 
             entityManager.persist(member1);
             System.out.println("member1.getId() = " + member1.getId());
-            System.out.println("===================");
+            System.out.println("===================");*/
             /*Member member = new Member();
             member.setId(3L);
             member.setUsername("c");
@@ -98,13 +111,13 @@ public class JpaMain {
             entityManager.persist(member); 회원 저장
             */
 
-            tx.commit();
-        } catch (Exception e){
-            tx.rollback();
-        } finally {
-            entityManager.close();
-        }
-
-        emf.close();
-    }
+//            tx.commit();
+//        } catch (Exception e){
+//            tx.rollback();
+//        } finally {
+//            entityManager.close();
+//        }
+//
+//        emf.close();
+//    }
 }
